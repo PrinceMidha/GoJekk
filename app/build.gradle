@@ -1,0 +1,75 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+kapt {
+    javacOptions {
+        option("-Xmaxerrs", 500)
+    }
+}
+
+android {
+    compileSdkVersion build_versions.compile_sdk as int
+    defaultConfig {
+        applicationId "com.apixu.gojekk"
+        minSdkVersion build_versions.min_sdk as int
+        targetSdkVersion build_versions.target_sdk as int
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+        versionCode 2
+        versionName "1.0"
+        proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+configurations {
+    all*.exclude group: 'com.google.guava', module: 'listenablefuture'
+
+}
+
+dependencies {
+    implementation deps.file_tree
+    implementation deps.support.appcompact
+    implementation deps.support.constraint
+    implementation deps.kotlin.stdlib_jdk7
+    implementation deps.retrofit.gson
+    implementation deps.okhttp.core
+    implementation deps.okhttp.okhttp_logging_interceptor
+    implementation deps.timber
+    implementation deps.dagger.runtime
+    implementation deps.dagger.android
+    implementation deps.dagger.android_support
+    kapt deps.dagger.compiler
+    kapt deps.dagger.android_support_compiler
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+}
+repositories {
+    mavenCentral()
+}
