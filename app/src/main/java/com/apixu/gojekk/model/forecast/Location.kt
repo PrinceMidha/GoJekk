@@ -1,9 +1,10 @@
-package com.apixu.weather.model.forecast
+package com.apixu.gojekk.model.forecast
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
-class Location {
+class Location : Serializable {
 
     @SerializedName("name")
     @Expose

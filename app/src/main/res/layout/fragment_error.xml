@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/error_background"
+	android:orientation="vertical">
+	
+	<TextView
+		android:id="@+id/errorText"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/error_margin_start"
+		android:layout_marginLeft="@dimen/error_margin_start"
+		android:layout_marginEnd="@dimen/error_margin_end"
+		android:layout_marginRight="@dimen/error_margin_end"
+		android:layout_marginBottom="@dimen/error_margin_bottom"
+		android:gravity="center"
+		android:text="@string/error_text"
+		android:textColor="@color/text_color"
+		android:textSize="@dimen/error_text_size"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:textSize="@dimen/error_text_size" />
+	
+	<android.support.design.button.MaterialButton
+		android:id="@+id/retryButton"
+		style="@style/Widget.MaterialComponents.Button"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		app:rippleColor="@android:color/transparent"
+		android:layout_marginTop="@dimen/retry_margin_top"
+		android:background="@color/button_background"
+		android:backgroundTint="@color/button_background"
+		android:fontFamily="sans-serif-medium"
+		android:gravity="center"
+		android:text="@string/retry"
+		android:textAppearance="?android:textAppearanceMedium"
+		android:textColor="@color/text_color"
+		android:textSize="18sp"
+		android:typeface="normal"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/errorText" />
+</android.support.constraint.ConstraintLayout>

@@ -22,13 +22,11 @@ import javax.inject.Singleton
 open class AppExecutors(
     private val diskIO: Executor,
     private val networkIO: Executor,
-    private val analyticsIO: ExecutorService,
     private val mainThread: Executor
 ) {
 
     @Inject
     constructor() : this(Executors.newSingleThreadExecutor(), Executors.newFixedThreadPool(3),
-            Executors.newSingleThreadExecutor(),
             MainThreadExecutor()
     )
 
@@ -42,10 +40,6 @@ open class AppExecutors(
 
     fun mainThread(): Executor {
         return mainThread
-    }
-
-    fun analyticsIO(): ExecutorService {
-        return analyticsIO
     }
 
     private class MainThreadExecutor : Executor {

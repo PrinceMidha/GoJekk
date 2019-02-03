@@ -14,10 +14,21 @@ versions.support = "28.0.0"
 versions.constraint = "1.1.3"
 versions.dagger = "2.16"
 versions.room = "2.1.0-alpha03"
+versions.lifecycle = "1.1.1"
+versions.espresso = "3.0.2"
+versions.runner = "1.0.2"
+versions.junit = "4.12"
+versions.hamcrest = "1.3"
+versions.mockretro = "2.0.0"
+versions.mockwebserver = "3.8.1"
+versions.arch = "1.0.0"
+versions.mockito = "2.7.14"
 
 def support = [:]
 support.appcompact = "com.android.support:appcompat-v7:$versions.support"
 support.constraint = "com.android.support.constraint:constraint-layout:$versions.constraint"
+support.recycleView = "com.android.support:recyclerview-v7:$versions.support"
+support.design = "com.android.support:design:$versions.support"
 deps.support = support
 
 def kotlin = [:]
@@ -26,6 +37,10 @@ kotlin.test = "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin"
 kotlin.plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
 kotlin.extensions_plugin = "org.jetbrains.kotlin:kotlin-android-extensions:$versions.kotlin"
 deps.kotlin = kotlin
+
+def lifecycle = [:]
+lifecycle.extensions = "android.arch.lifecycle:extensions:$versions.lifecycle"
+deps.lifecycle = lifecycle
 
 def dagger = [:]
 dagger.runtime = "com.google.dagger:dagger:$versions.dagger"
@@ -46,6 +61,21 @@ def okhttp = [:]
 okhttp.okhttp_logging_interceptor = "com.squareup.okhttp3:logging-interceptor:$versions.okhttp"
 okhttp.core =  "com.squareup.okhttp3:okhttp:$versions.okhttp"
 deps.okhttp = okhttp
+
+def testing = [:]
+testing.espresso = "com.android.support.test.espresso:espresso-core:$versions.espresso"
+testing.runner = "com.android.support.test:runner:$versions.runner"
+testing.junit = "junit:junit:$versions.junit"
+testing.hamcrest = "org.hamcrest:hamcrest-all:$versions.hamcrest"
+testing.arch = "android.arch.core:core-testing:$versions.arch"
+deps.testing = testing
+
+def mock = [:]
+mock.retrofit = "com.squareup.retrofit2:retrofit-mock:$versions.mockretro"
+mock.mock_web_server = "com.squareup.okhttp3:mockwebserver:$versions.mockwebserver"
+mock.mockitoAndroid = "org.mockito:mockito-android:$versions.mockito"
+mock.mockitoCore = "org.mockito:mockito-core:$versions.mockito"
+deps.mock = mock
 
 deps.file_tree =  fileTree(include: ['*.jar'], dir: 'libs')
 deps.timber = "com.jakewharton.timber:timber:$versions.timber"

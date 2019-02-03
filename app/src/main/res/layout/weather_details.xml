@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/app_background">
+	
+	<TextView
+		android:id="@+id/currentTemp"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="56dp"
+		android:text="20"
+		android:textColor="@color/item_color"
+		android:textSize="@dimen/current_temp_size"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+	
+	<TextView
+		android:id="@+id/currentCity"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="8dp"
+		android:layout_marginLeft="8dp"
+		android:layout_marginTop="8dp"
+		android:layout_marginEnd="8dp"
+		android:layout_marginRight="8dp"
+		android:layout_marginBottom="62dp"
+		android:gravity="center"
+		android:text="Bangalore"
+		android:textColor="@color/city_name_color"
+		android:textSize="@dimen/city_name_size"
+		app:layout_constraintBottom_toTopOf="@+id/recycler"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/currentTemp" />
+	
+	<android.support.v7.widget.RecyclerView
+		android:id="@+id/recycler"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_marginStart="8dp"
+		android:layout_marginLeft="8dp"
+		android:layout_marginTop="8dp"
+		android:layout_marginEnd="8dp"
+		android:layout_marginRight="8dp"
+		android:background="@color/text_color"
+		android:paddingTop="@dimen/recycler_padding_top"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/currentCity">
+	
+	</android.support.v7.widget.RecyclerView>
+</android.support.constraint.ConstraintLayout>

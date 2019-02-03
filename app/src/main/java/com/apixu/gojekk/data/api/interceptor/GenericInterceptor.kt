@@ -9,12 +9,11 @@ import okhttp3.Response
 internal class GenericInterceptor : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         var request = chain.request()
-        request = request.newBuilder()
-            .addHeader(
-                "key",
-                "495e7a485f854cdfa7464800192801"
-            )
-            .build()
+        val url =
+            request.url().newBuilder().addQueryParameter("key", "495e7a485f854cdfa7464800192801")
+                .build()
+        request = request.newBuilder().url(url).build()
+
         return chain.proceed(request)!!
     }
 }

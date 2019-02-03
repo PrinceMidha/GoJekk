@@ -8,14 +8,14 @@ import dagger.Provides
 import javax.inject.Singleton
 
 /**
- * Created by Aditya Mehta on 16/04/18.
+ * Created by Prince Midha.
  */
 @Module(includes = [ViewModelModule::class])
-class NetworkModule {
+open class NetworkModule {
 
     @Singleton
     @Provides
-   internal  fun provideRetrofitService(application: Application): WeatherApi {
+   internal open fun provideRetrofitService(application: Application): WeatherApi {
         return RetrofitProvider
                 .provideDefaultRetrofit(application, true)
                 .create(WeatherApi::class.java)

@@ -1,6 +1,7 @@
 package com.apixu.gojekk.di
 
 import android.app.Application
+import com.apixu.gojekk.GoJekkApp
 import com.apixu.gojekk.di.modules.ApplicationModule
 import com.apixu.gojekk.di.modules.MainActivityModule
 import dagger.BindsInstance
@@ -24,5 +25,5 @@ interface AppComponent {
         fun build(): AppComponent
     }
 
-    fun inject(app: Application)
+    fun inject(app: GoJekkApp)
 }

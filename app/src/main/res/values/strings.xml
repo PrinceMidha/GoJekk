@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">GoJekk</string>
+    <string name="app_name">GoJek</string>
+    <string name="error_text">Something went wrong at our end!</string>
+    <string name="retry">Retry</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

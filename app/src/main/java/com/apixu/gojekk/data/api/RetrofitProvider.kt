@@ -1,6 +1,7 @@
 package com.apixu.gojekk.data.api
 
 import android.app.Application
+import com.apixu.gojekk.Constants
 import com.apixu.gojekk.data.api.interceptor.GenericInterceptor
 import com.apixu.gojekk.livedata.LiveDataCallAdapterFactory
 import okhttp3.OkHttpClient
@@ -19,7 +20,7 @@ object RetrofitProvider {
     fun provideDefaultRetrofit(context: Application, showNetworkLogs: Boolean): Retrofit {
 
         return Retrofit.Builder()
-            .baseUrl("http://api.apixu.com/v1/")
+            .baseUrl(Constants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(provideOkHttpClient(context, showNetworkLogs))
             .addCallAdapterFactory(LiveDataCallAdapterFactory())

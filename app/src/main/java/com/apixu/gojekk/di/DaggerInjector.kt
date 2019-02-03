@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentActivity
 import android.support.v4.app.FragmentManager
+import com.apixu.gojekk.GoJekkApp
 import dagger.android.AndroidInjection
 import dagger.android.support.AndroidSupportInjection
 import dagger.android.support.HasSupportFragmentInjector
@@ -14,12 +15,11 @@ import dagger.android.support.HasSupportFragmentInjector
  * Created by PRince Midha on 30/01/19.
  */
 object DaggerInjector {
-    fun injectAll(application: Application) {
-        val visionAppComponent = DaggerAppComponent.builder()
+    fun injectAll(application: GoJekkApp) {
+        DaggerAppComponent.builder()
             .application(application)
             .build()
-
-        visionAppComponent.inject(application)
+            .inject(application)
 
         application
             .registerActivityLifecycleCallbacks(object : Application.ActivityLifecycleCallbacks {
