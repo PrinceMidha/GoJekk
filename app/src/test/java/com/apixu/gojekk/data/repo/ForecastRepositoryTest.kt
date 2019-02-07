@@ -1,18 +1,20 @@
 package com.apixu.gojekk.data.repo
 
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.Observer
-import com.apixu.gojekk.data.api.ApiResponse
 import com.apixu.gojekk.data.api.WeatherApi
-import com.apixu.gojekk.model.Resource
-import com.apixu.gojekk.model.forecast.WeatherResponse
 import com.apixu.gojekk.util.*
+import org.junit.Rule
 import org.junit.Test
+import org.junit.runner.RunWith
+import org.junit.runners.JUnit4
 import org.mockito.Mockito
 import org.mockito.Mockito.`when`
 
-
+@RunWith(JUnit4::class)
 class ForecastRepositoryTest {
+
+//    @Rule
+//    @JvmField
+//    val instantExecutorRule = InstantTa()
 
     private val retrofitService = Mockito.mock(WeatherApi::class.java)
     private val repo = ForecastRepository(InstantAppExecutors(), retrofitService)

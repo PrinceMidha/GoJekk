@@ -21,8 +21,9 @@ versions.junit = "4.12"
 versions.hamcrest = "1.3"
 versions.mockretro = "2.0.0"
 versions.mockwebserver = "3.8.1"
-versions.arch = "1.0.0"
+versions.arch = "1.1.1"
 versions.mockito = "2.7.14"
+versions.orchestrator = "1.0.1"
 
 def support = [:]
 support.appcompact = "com.android.support:appcompat-v7:$versions.support"
@@ -68,6 +69,7 @@ testing.runner = "com.android.support.test:runner:$versions.runner"
 testing.junit = "junit:junit:$versions.junit"
 testing.hamcrest = "org.hamcrest:hamcrest-all:$versions.hamcrest"
 testing.arch = "android.arch.core:core-testing:$versions.arch"
+testing.orchestrator="com.android.support.test:orchestrator:$versions.orchestrator"
 deps.testing = testing
 
 def mock = [:]

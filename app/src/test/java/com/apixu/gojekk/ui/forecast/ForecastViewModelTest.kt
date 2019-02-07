@@ -17,13 +17,19 @@ import org.mockito.Mockito
 @RunWith(JUnit4::class)
 class ForecastViewModelTest {
 
+//    @Rule
+//    @JvmField
+//    val instantExecutorRule = InstantTaskExecutorRule()
+
     private val repository = Mockito.mock(ForecastRepository::class.java)
     private var repoViewModel = ForecastViewModel(repository)
 
     @Test
     fun testNull() {
-        MatcherAssert.assertThat(repoViewModel.forecastResponse, CoreMatchers.notNullValue())
+        MatcherAssert.assertThat(repoViewModel.getWeatherForecast(), CoreMatchers.notNullValue())
         Mockito.verify(repository, Mockito.never()).getForecast()
+//        userViewModel.setLogin("foo")
+//        Mockito.verify(userRepository, Mockito.never()).loadUser(Mockito.anyString())
     }
 
     @Test
